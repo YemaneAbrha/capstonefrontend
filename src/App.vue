@@ -1,9 +1,13 @@
 <template>
   <v-app>
-  <VerticaNavs />
-    <!-- <v-main> -->
-  <!-- <router-view/> -->
-    <!-- </v-main> -->
+    <v-container class="ma-0 fill-hight" >
+     <v-row >
+       <VerticaNavs />
+       <v-main>
+         <router-view/>
+       </v-main>
+      </v-row>
+  </v-container>
   </v-app>
 </template>
 

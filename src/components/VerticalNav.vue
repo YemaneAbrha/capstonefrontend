@@ -3,8 +3,10 @@
       v-model="drawer"
       :mini-variant.sync="mini"
       permanent
+      app
+      
     >
-      <v-list-item class="px-2">
+      <v-list-item class="px-2"> 
       <v-list-item-title>Yemane Abrha</v-list-item-title>
 
         <v-btn
@@ -15,13 +17,18 @@
         </v-btn>
       </v-list-item>
 
-      <v-divider></v-divider>
+      <!-- <v-divider></v-divider> -->
 
-      <v-list >
+      <v-list 
+      nav
+      >
         <v-list-item
           v-for="item in items"
           :key="item.title"
-          link
+          :to="item.to"
+
+          
+          
         >
           <v-list-item-icon>
             <v-icon>{{ item.icon }}</v-icon>
@@ -32,9 +39,10 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
+      <v-spacer></v-spacer>
        <template v-slot:append>
         <div class="pa-2">
-          <v-btn block>
+          <v-btn block x-large dark>
             Logout
           </v-btn>
         </div>
@@ -45,17 +53,17 @@
   export default {
     data () {
       return {
-        drawer: true,
+        drawer: false,
         items: [
-          { title: 'Dash-Board', icon: 'mdi-view-dashboard' },
-          { title: 'Maintenance', icon: 'mdi-account' },
-          { title: 'Bill', icon: 'mdi-currency-usd' },
-          { title: 'Properties', icon: 'mdi-home-city' },
-          { title: 'User', icon: 'mdi-account-group' },
-          { title: 'Message', icon: 'mdi-message' },
+          { title: 'Dash-Board', icon: 'mdi-view-dashboard' , to:'/'},
+          { title: 'Maintenance', icon: 'mdi-account', to:'/maintenance' },
+          { title: 'Bill', icon: 'mdi-currency-usd', to:'/bill' },
+          { title: 'Properties', icon: 'mdi-home-city', to:'/properties'},
+          { title: 'User', icon: 'mdi-account-group', to:'/user' },
+          { title: 'Message', icon: 'mdi-message', to:'/message' },
           
         ],
-        mini: false,
+        mini: true,
       }
     },
   }
