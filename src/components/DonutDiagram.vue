@@ -38,5 +38,4 @@ export default {
 };
 </script>
          
-                   :sections="[{ value: 35 ,color:red ,icon:'ds' , label:'ash'}]"
-
+                
