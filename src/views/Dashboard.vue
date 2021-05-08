@@ -1,109 +1,46 @@
 <template>
-  <v-col>
+  <v-container>
     <v-row>
-      <v-card max-width="400" elevation="0">
-        <v-row class="pa-10" align="center">
-          <v-col>
-            <h1>54</h1>
-            <h3>Occupied Unit</h3>
+      <v-col sm="12" md="7">
+        <v-row>
+          <v-col sm="12" md="6" v-for="diagram in diagrams" :key="diagram.name">
+            <DonutDiagram :diagram="diagram" />
           </v-col>
-          <vc-donut
-            background="white"
-            foreground="grey"
-            :size="100"
-            unit="px"
-            :thickness="10"
-            :sections="sections"
-            :total="100"
-            :start-angle="0"
-            :auto-adjust-text-size="true"
-            @section-click="handleSectionClick"
-          >
-            <v-icon color="black" size="100" x-large>mdi-domain</v-icon>
-          </vc-donut>
         </v-row>
-      </v-card>
-      <v-card max-width="400" class="md-2 lg-3">
-        <v-row class="pa-10" align="center">
-          <v-col>
-            <h1>54</h1>
-            <h3>Occupied Unit</h3>
-          </v-col>
-          <vc-donut
-            background="white"
-            foreground="grey"
-            :size="100"
-            unit="px"
-            :thickness="10"
-            :sections="sections"
-            :total="100"
-            :start-angle="0"
-            :auto-adjust-text-size="true"
-            @section-click="handleSectionClick"
-          >
-            <v-icon color="black" size="100" x-large>mdi-domain</v-icon>
-          </vc-donut>
-        </v-row>
-      </v-card>
+      </v-col>
     </v-row>
-    <v-row>
-      <v-card max-width="400" class="md-2 lg-3">
-        <v-row class="pa-10" align="center">
-          <v-col>
-            <h1>54</h1>
-            <h3>Occupied Unit</h3>
-          </v-col>
-          <vc-donut
-            background="white"
-            foreground="grey"
-            :size="100"
-            unit="px"
-            :thickness="10"
-            :sections="sections"
-            :total="100"
-            :start-angle="0"
-            :auto-adjust-text-size="true"
-            @section-click="handleSectionClick"
-          >
-            <v-icon color="black" size="100" x-large>mdi-domain</v-icon>
-          </vc-donut>
-        </v-row>
-      </v-card>
-      <v-card max-width="400" class="md-2 lg-3">
-        <v-row class="pa-10" align="center">
-          <v-col>
-            <h1>54</h1>
-            <h3>Occupied Unit</h3>
-          </v-col>
-          <vc-donut
-            background="white"
-            foreground="grey"
-            :size="100"
-            unit="px"
-            :thickness="10"
-            :sections="sections"
-            :total="100"
-            :start-angle="0"
-            :auto-adjust-text-size="true"
-            @section-click="handleSectionClick"
-          >
-            <v-icon color="black" size="100" x-large>mdi-domain</v-icon>
-          </vc-donut>
-        </v-row>
-      </v-card>
-    </v-row>
-  </v-col>
+  </v-container>
 </template>
 <script>
 import DonutDiagram from "../components/DonutDiagram";
 export default {
   data() {
     return {
-      sections: [
-        { label: "Occupied", value: 75, color: "green" }
-        //   { label: 'Un-Occupied', value: 25, color: 'primary' },
-
-        //   { label: 'Blue section', value: 25, color: 'blue' }
+      diagrams: [
+        {
+          label: "Occupied Unit",
+          value: 75,
+          color: "blue",
+          icon: "mdi-domain"
+        },
+        {
+          label: "Pending M. Request",
+          value: 70,
+          color: "orange",
+          icon: "mdi-credit-card-clock"
+        },
+        {
+          label: "Paid Bill",
+          value: 88,
+          color: "green",
+          icon: "mdi-text-box-check"
+        },
+        {
+          label: "Late Payment",
+          value: 20,
+          color: "red",
+          icon: "mdi-clock-alert"
+        }
       ]
     };
   },
@@ -112,6 +49,8 @@ export default {
       console.log(`${section.label} clicked.`);
     }
   },
-  components: {}
+  components: {
+    DonutDiagram
+  }
 };
 </script>
