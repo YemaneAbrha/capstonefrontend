@@ -35,20 +35,6 @@
         class="elevation-1"
       ></v-data-table>
     </v-row>
-    <v-row align="center" justify="center">
-      <v-container ma-5>
-        <h3 class="text-center display-3 hidden-xs-only">Paid Fees</h3>
-        <h3 class="text-center display-1 hidden-sm-and-up">Paid Fees</h3>
-      </v-container>
-    </v-row>
-    <v-row align="center" justify="center">
-      <v-data-table
-        :headers="headers"
-        :items="newMaintenance"
-        :items-per-page="3"
-        class="elevation-1"
-      ></v-data-table>
-    </v-row>
   </v-sheet>
 </template>
 <script>
