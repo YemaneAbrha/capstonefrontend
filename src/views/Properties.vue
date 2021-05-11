@@ -2,7 +2,7 @@
   <v-sheet>
     <v-container class="text-center" pa-15>
       <v-row>
-        <v-btn block color="success" class="ml-10" outlined large to="store">
+        <v-btn block color="success" class="ml-10" outlined large to="registerProperty">
           <v-icon left>mdi-plus</v-icon>Register Properties
         </v-btn>
       </v-row>
