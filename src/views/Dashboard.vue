@@ -1,15 +1,17 @@
 <template>
-  <v-container>
-    <v-row>
-      <v-col sm="12" md="7">
-        <v-row>
-          <v-col sm="12" md="6" v-for="diagram in diagrams" :key="diagram.name">
-            <DonutDiagram :diagram="diagram" />
-          </v-col>
-        </v-row>
-      </v-col>
-    </v-row>
-  </v-container>
+  <v-seet>
+    <v-container pa-15>
+      <v-row>
+        <v-col sm="12" md="8">
+          <v-row>
+            <v-col sm="12" md="6" v-for="diagram in diagrams" :key="diagram.name">
+              <DonutDiagram :diagram="diagram" />
+            </v-col>
+          </v-row>
+        </v-col>
+      </v-row>
+    </v-container>
+  </v-seet>
 </template>
 <script>
 import DonutDiagram from "../components/DonutDiagram";
