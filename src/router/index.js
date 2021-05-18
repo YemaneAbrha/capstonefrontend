@@ -4,7 +4,8 @@ import DashBoard from "../views/Dashboard.vue";
 import Maintenance from "../views/Maintenane.vue";
 import Bill from "../views/Bill.vue";
 import Properties from "../views/Properties.vue";
-import User from "../views/User.vue";
+import Tenant from "../views/Tenant.vue";
+import Professional from "../views/Professional.vue";
 import Message from "../views/Messages.vue";
 import CreateBill from "../views/CreateBill.vue";
 import RegisterProperty from "../views/RegisterProperty.vue";
@@ -33,9 +34,14 @@ const routes = [
     component: Properties,
   },
   {
-    path: "/user",
-    name: "User",
-    component: User,
+    path: "/tenant",
+    name: "Tenant",
+    component: Tenant,
+  },
+  {
+    path: "/professional",
+    name: "Professional",
+    component: Professional,
   },
   {
     path: "/messages",

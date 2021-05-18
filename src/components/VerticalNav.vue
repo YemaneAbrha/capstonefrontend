@@ -39,7 +39,12 @@ export default {
         { title: "Maintenance", icon: "mdi-account", to: "/maintenance" },
         { title: "Bill", icon: "mdi-currency-usd", to: "/bill" },
         { title: "Properties", icon: "mdi-home-city", to: "/properties" },
-        { title: "User", icon: "mdi-account-group", to: "/user" },
+        { title: "Tenant", icon: "mdi-account-group", to: "/tenant" },
+        {
+          title: "Professional",
+          icon: "mdi-hammer-wrench",
+          to: "/professional"
+        },
         { title: "Message", icon: "mdi-message", to: "/message" }
       ],
       mini: false
