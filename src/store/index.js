@@ -7,7 +7,9 @@ import Vuex from "vuex";
 import { pendingBill, lateFee, paidFee } from "../data/bill";
 import maintenance from "../data/maintenance";
 import property from "../data/properties";
-
+import { newRegisteredTenant, tenant } from "../data/tenant";
+console.log("Yemane Abrha");
+console.log(newRegisteredTenant);
 Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
@@ -16,6 +18,8 @@ export default new Vuex.Store({
     lateFee,
     paidFee,
     property,
+    newRegisteredTenant,
+    tenant,
   },
   mutations: {
     addBill(state, payload) {
@@ -45,6 +49,17 @@ export default new Vuex.Store({
       const { index } = payload;
       state.lateFee.splice(index, 1);
     },
+    /** Approve & Decline Newly Registered */
+    approveTenant(state, payload) {
+      const { item, index } = payload;
+      state.newRegisteredTenant.splice(index, 1);
+      state.tenant.push(item);
+    },
+    declineTenant(state, payload) {
+      const { index } = payload;
+      state.newRegisteredTenant.splice(index, 1);
+    },
+
     registerProperty(state, payload) {
       // state.property.push(payload);
     },
