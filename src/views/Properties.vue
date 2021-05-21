@@ -7,126 +7,93 @@
         </v-btn>
       </v-row>
     </v-container>
-    <v-row align="center" justify="center">
-      <v-container ma-5>
-        <h3 class="text-center display-3 hidden-xs-only">Available Rooms</h3>
-        <h3 class="text-center display-1 hidden-sm-and-up">Available Rooms</h3>
-      </v-container>
-    </v-row>
-    <v-row align="center" justify="center">
-      <v-data-table
-        :headers="headers"
-        :items="newMaintenance"
-        :items-per-page="3"
-        class="elevation-1"
-      ></v-data-table>
-    </v-row>
-    <v-row align="center" justify="center">
-      <v-container ma-5>
-        <h3 class="text-center display-3 hidden-xs-only">Assigned Rooms</h3>
-        <h3 class="text-center display-1 hidden-sm-and-up">Assigned Rooms</h3>
-      </v-container>
-    </v-row>
-    <v-row align="center" justify="center">
-      <v-data-table
-        :headers="headers"
-        :items="newMaintenance"
-        :items-per-page="3"
-        class="elevation-1"
-      ></v-data-table>
-    </v-row>
+    <Availiable />
   </v-sheet>
 </template>
 <script>
+import Availiable from "../components/lease/Availiable";
+import Occupied from "../components/lease/Occupied";
 export default {
   data() {
     return {
       headers: [
         {
-          text: "Maintenance Type",
+          text: "Unit Name",
           align: "start",
           sortable: false,
-          value: "name"
+          value: "unitName"
         },
-        { text: "Tenant Name", value: "tenant", sortable: false },
-        { text: "Property", value: "property", sortable: false },
-        { text: "Date ", value: "date", sortable: true }
+        { text: "Floor Number", value: "floorNumber", sortable: false },
+        { text: "Total Area", value: "totalArea", sortable: false },
+        { text: "Billable Area ", value: "billableArea", sortable: false },
+        { text: "Rental Rate ", value: "rentalRate", sortable: false },
+        { text: "Tenant ", value: "tenant", sortable: false },
+        { text: "Payment Period ", value: "paymentPeriod", sortable: false },
+        { text: "Actions", value: "actions", sortable: false }
       ],
-      newMaintenance: [
+
+      availiableLease: [
         {
-          name: "Frozen Yogurt",
-          tenant: 159,
-          property: 6.0,
-          date: "24-Tus-2020"
+          unitName: "M01",
+          floorNumber: "Mizanen",
+          totalArea: "40",
+          billableArea: "30",
+          rentalRate: "150",
+          tenant: "Abebe Zegeye",
+          paymentPeriod: "Monthly"
+        },
+
+        {
+          unitName: "M01",
+          floorNumber: "Mizanen",
+          totalArea: "40",
+          billableArea: "30",
+          rentalRate: "150",
+          tenant: "Abebe Zegeye",
+          paymentPeriod: "Monthly"
         },
         {
-          name: "Ice cream sandwich",
-          tenant: 237,
-          property: 9.0,
-          date: "23-Tus-2031"
+          unitName: "M01",
+          floorNumber: "Mizanen",
+          totalArea: "40",
+          billableArea: "30",
+          rentalRate: "150",
+          tenant: "Abebe Zegeye",
+          paymentPeriod: "Monthly"
         },
         {
-          name: "Eclair",
-          tenant: 262,
-          property: 16.0,
-          date: "23-Tus-2031"
+          unitName: "M01",
+          floorNumber: "Mizanen",
+          totalArea: "40",
+          billableArea: "30",
+          rentalRate: "150",
+          tenant: "Abebe Zegeye",
+          paymentPeriod: "Monthly"
         },
         {
-          name: "Cupcake",
-          tenant: 305,
-          property: 3.7,
-          date: "23-Tus-2031"
+          unitName: "M01",
+          floorNumber: "Mizanen",
+          totalArea: "40",
+          billableArea: "30",
+          rentalRate: "150",
+          tenant: "Abebe Zegeye",
+          paymentPeriod: "Monthly"
         },
         {
-          name: "Gingerbread",
-          tenant: 356,
-          property: 16.0,
-          date: "23-Tus-2031"
-        },
-        {
-          name: "Jelly bean",
-          tenant: 375,
-          property: 0.0,
-          date: "23-Tus-2031"
-        },
-        {
-          name: "Lollipop",
-          tenant: 392,
-          property: 0.2,
-          date: "23-Tus-2031"
-        },
-        {
-          name: "Honeycomb",
-          tenant: 408,
-          property: 3.2,
-          date: "23-Tus-2031"
-        },
-        {
-          name: "Donut",
-          tenant: 452,
-          property: 25.0,
-          date: "23-Tus-2031"
-        },
-        {
-          name: "KitKat",
-          tenant: 518,
-          property: 26.0,
-          date: "23-Tus-2031"
-        },
-        {
-          name: "Ice cream sandwich",
-          tenant: 237,
-          property: 9.0,
-          date: "23-Tus-2031"
-        },
-        {
-          name: "Eclair",
-          tenant: 262,
-          property: 16.0,
-          date: "23-Tus-2031"
+          unitName: "M01",
+          floorNumber: "Mizanen",
+          totalArea: "40",
+          billableArea: "30",
+          rentalRate: "150",
+          tenant: "Abebe Zegeye",
+          paymentPeriod: "Monthly"
         }
       ]
     };
+  },
+  components: {
+    Availiable,
+    Occupied
   }
 };
 </script>
