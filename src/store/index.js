@@ -5,6 +5,7 @@ import Vuex from "vuex";
     the model.
  */
 import { pendingBill, lateFee, paidFee } from "../data/bill";
+import { occupied, available } from "../data/lease";
 import maintenance from "../data/maintenance";
 import property from "../data/properties";
 import { newRegisteredTenant, tenant } from "../data/tenant";
@@ -20,6 +21,8 @@ export default new Vuex.Store({
     property,
     newRegisteredTenant,
     tenant,
+    occupied,
+    available,
   },
   mutations: {
     addBill(state, payload) {
