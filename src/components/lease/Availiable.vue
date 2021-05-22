@@ -7,7 +7,7 @@
       </v-container>
     </v-row>
     <v-row align="center" justify="center">
-      <v-data-table :headers="headers" :items="$store.state.occupied" class="elevation-1">
+      <v-data-table :headers="headers" :items="$store.state.available" class="elevation-1">
         <template v-slot:top>
           <v-divider class="mx-4" inset vertical></v-divider>
           <v-spacer></v-spacer>
@@ -24,7 +24,11 @@
           </v-dialog>
         </template>
         <template v-slot:item.actions="{ item }">
-          <v-icon small @click="approveTenant(item)" color="info">mdi-more</v-icon>
+          <!-- <template v-slot:label> -->
+          <!-- <div> -->
+          <!-- </template> -->
+          <!-- <v-icon small @click="approveTenant(item)" color="info">mdi-more</v-icon> -->
+          <v-btn text color="success" @click="allocate(item)">allocate</v-btn>
         </template>
         <template v-slot:no-data>No Data</template>
       </v-data-table>
@@ -45,12 +49,14 @@ export default {
         { text: "Floor Number", value: "floorNumber", sortable: false },
         { text: "Total Area", value: "totalArea", sortable: false },
         { text: "Billable Area ", value: "billableArea", sortable: false },
-        { text: "Rental Rate ", value: "rentalRate", sortable: false },
-        { text: "Tenant ", value: "tenant", sortable: false },
-        { text: "Payment Period ", value: "paymentPeriod", sortable: false },
         { text: "Actions", value: "actions", sortable: false }
       ]
     };
+  },
+  methods: {
+    allocate(item) {
+      console.log("Hahaahah Yemane Abrha");
+    }
   }
 };
 </script>

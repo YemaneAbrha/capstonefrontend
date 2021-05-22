@@ -7,11 +7,7 @@
       </v-container>
     </v-row>
     <v-row align="center" justify="center">
-      <v-data-table
-        :headers="headers"
-        :items="$store.state.newRegisteredTenant"
-        class="elevation-1"
-      >
+      <v-data-table :headers="headers" :items="$store.state.tenant" class="elevation-1">
         <template v-slot:top>
           <v-divider class="mx-4" inset vertical></v-divider>
           <v-spacer></v-spacer>

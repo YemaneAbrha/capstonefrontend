@@ -56,5 +56,30 @@ var occupied = [
   },
 ];
 
-var available = [];
+var available = [
+  {
+    unitName: "M01",
+    floorNumber: "Mizanen",
+    totalArea: "40",
+    billableArea: "30",
+  },
+  {
+    unitName: "M01",
+    floorNumber: "Mizanen",
+    totalArea: "40",
+    billableArea: "30",
+  },
+  {
+    unitName: "M01",
+    floorNumber: "Mizanen",
+    totalArea: "40",
+    billableArea: "30",
+  },
+  {
+    unitName: "M01",
+    floorNumber: "Mizanen",
+    totalArea: "40",
+    billableArea: "30",
+  },
+];
 export { occupied, available };
