@@ -1,10 +1,9 @@
 <template>
   <v-stepper-content step="1">
-    <v-text-field v-model="data.propertyName" label="Unit Name * " reqired />
-    <v-text-field label="Floor Number * " reqired />
-
-    <v-text-field v-model="data.city" label="Total Area * " suffix="m2" reqired />
-    <v-text-field v-model="data.country" label="Billable Area * " suffix="m2" reqired />
+    <v-text-field v-model="data.unitName" label="Unit Name * " reqired />
+    <v-text-field v-model="data.floorNumber" label="Floor Number * " reqired />
+    <v-text-field v-model="data.totalArea" label="Total Area * " suffix="m2" reqired />
+    <v-text-field v-model="data.billableArea" label="Billable Area * " suffix="m2" reqired />
     <V-container>
       <v-row>
         <v-btn text to="properties">Cancel</v-btn>
