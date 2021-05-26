@@ -7,9 +7,12 @@
         </v-btn>
       </v-row>
     </v-container>
+    <v-container  align="center" justify="center" >
     <PendingFee />
     <LateFee />
     <PaidFee />
+    </v-container>
+   
   </v-sheet>
 </template>
 <script>

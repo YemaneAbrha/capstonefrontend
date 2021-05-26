@@ -6,7 +6,7 @@
         <h3 class="text-center display-1 hidden-sm-and-up">Late Fees</h3>
       </v-container>
     </v-row>
-    <v-row align="center" justify="center">
+    <v-row align="center" justify="center" >
       <!-- Start here -->
       <v-data-table :headers="headers" :items="$store.state.lateFee" class="elevation-1">
         <template v-slot:top>
