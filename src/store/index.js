@@ -63,8 +63,9 @@ export default new Vuex.Store({
       state.newRegisteredTenant.splice(index, 1);
     },
 
-    registerProperty(state, payload) {
-      // state.property.push(payload);
+    addUnit(state, payload) {
+      state.available.push(payload);
+      console.log(payload);
     },
   },
   actions: {},

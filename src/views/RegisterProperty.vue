@@ -32,26 +32,34 @@ export default {
     TenantInfo,
     PropertyInfo
   },
-  data() {
-    return {
-      step: 1,
-      checkoutForm: false,
-      data: {
-        propertyName: "",
-        city: "",
-        country: "",
-        rentalrate: "",
-        contractDocument: "",
-        tenant: ""
-      },
-      rules: {
-        required: value => !!value || "Required."
-      }
-    };
-  },
+  data: () => ({
+    // return {
+    step: 1,
+    checkoutForm: false,
+    data: {
+      unitName: "ddfd",
+      floorNumber: "",
+      totalArea: "",
+      billableArea: "",
+      rentalrate: "",
+      contractDocument: "",
+      tenant: ""
+    },
+    rules: {
+      required: value => !!value || "Required."
+    }
+    // };
+  }),
   methods: {
     next() {
       this.step += 1;
+
+      this.$store.commit("addUnit", {
+        unitName: this.data.unitName,
+        floorNumber: this.data.floorNumber,
+        totalArea: this.data.totalArea,
+        billableArea: this.data.billableArea
+      });
     },
     previous() {
       this.step -= 1;
